@@ -1,0 +1,48 @@
+oauth_access_tokens : (done)
+id (varchar100)
+user_id (int8, nullable)
+client_id (int8)
+name (varchar255, nullable)
+scopes (text, nullable)
+revoked (bool)
+created_at (timestamp)
+updated_at (timestamp)
+expires_at (timestamp)
+
+oauth_auth_codes :
+id (varchar100)
+user_id (int8)
+client_id (int8)
+scopes (text, nullable)
+revoked (bool)
+expires_at (timestamp)
+
+oauth_clients :
+id (int8)
+user_id (int8, nullable)
+name (varchar255)
+secret (varchar100, nullable)
+provider (varchar255, nullable)
+redirect (text)
+personal_access_client (bool)
+password_client (bool)
+revoked (bool)
+created_at (timestamp)
+updated_at (timestamp)
+
+oauth_personal_access_clients :
+id (varchar100)
+client_id (int8)
+created_at (timestamp)
+updated_at (timestamp)
+
+oauth_refresh_tokens :
+id (varchar100)
+access_token_id (varchar100)
+revoked (bool)
+expires_at (timestamp, nullable)
+
+
+**Problem :
+1. File Upload Storage (Beda server, nama juga beda)
+2. Default Roles (Ketika register)
